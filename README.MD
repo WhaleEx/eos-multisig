@@ -25,7 +25,8 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
     以上a, b, c三步均通过后 多签才会被认可执行. 
 ## 具体步骤
 1. WhaleEx: 提交代码审计, 提交议案
-  1.1 生成多签trx
+
+  1.1. 生成多签trx
 
     ```cleos set contract whaleextrust contract_dir -d -x 86400 -s -j -p whaleextrust@owner > wal_exchange.json ```
       
@@ -36,7 +37,7 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
   1.2. 生成permission.json
 
     
-    [
+    ```[
        {"actor": "eosiomeetone", "permission": "active"},
        {"actor": "eosstorebest", "permission": "active"},
        {"actor": "jedaaaaaaaaa", "permission": "active"},
@@ -46,7 +47,7 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
        {"actor": "eosbeijingbp", "permission": "active"},
        {"actor": "eoslaomaocom", "permission": "active"},
        {"actor": "whaleex.com", "permission": "active"}
-    ]
+    ```]
     
 
   1.3. 提交议案, 提交代码审计
