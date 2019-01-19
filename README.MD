@@ -28,16 +28,16 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
 
   1.1. 生成多签trx
 
-    ```cleos set contract whaleextrust contract_dir -d -x 86400 -s -j -p whaleextrust@owner > wal_exchange.json ```
+    cleos set contract whaleextrust contract_dir -d -x 86400 -s -j -p whaleextrust@owner > wal_exchange.json
       
-     计算wal_exchange.json中code hash的方法，需要安装jq
+   计算wal_exchange.json中code hash的方法，需要安装jq
      
-    ```cat wal_exchange.json | jq -r '.actions[0].data' | cut -c 27- | xxd -r -p |openssl dgst -sha256```
+    cat wal_exchange.json | jq -r '.actions[0].data' | cut -c 27- | xxd -r -p |openssl dgst -sha256
 
   1.2. 生成permission.json
 
     
-    ```[
+    [
        {"actor": "eosiomeetone", "permission": "active"},
        {"actor": "eosstorebest", "permission": "active"},
        {"actor": "jedaaaaaaaaa", "permission": "active"},
@@ -47,7 +47,7 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
        {"actor": "eosbeijingbp", "permission": "active"},
        {"actor": "eoslaomaocom", "permission": "active"},
        {"actor": "whaleex.com", "permission": "active"}
-    ```]
+    ]
     
 
   1.3. 提交议案, 提交代码审计
