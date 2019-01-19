@@ -1,4 +1,4 @@
-# WhaleEx鲸交所智能合约多签解决方案[whaleex.com](https://www.whaleex.com)
+# WhaleEx鲸交所智能合约多签解决方案 by [whaleex.com](https://www.whaleex.com)
 本文用于阐述"WhaleEx鲸交所智能合约多签解决方案"的目的和执行步骤
 ## 目的
 WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一直以来, 所有WhaleEx智能合约([whaleextrust](https://eospark.com/contract/whaleextrust))上的资产转出, 都是由该合约的active key(whaleextrust@eosio.code)来执行的. 鉴于我们的初衷, 也为了更好地保护用户的资产, 我们决定升级合约安全级别, 让WhaleEx和EOS主网节点多签来确保用户的资产安全. 
