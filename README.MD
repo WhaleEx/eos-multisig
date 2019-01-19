@@ -24,7 +24,8 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
     c. 节点方与whaleex.com通过多签方案中包含的升级内容, 生成hash值, 与#b中审计方提供的hash值校验通过
     以上a, b, c三步均通过后 多签才会被认可执行. 
 ## 具体步骤
-1. 生成多签trx
+1. WhaleEx: 提交代码审计, 提交议案
+  1.1 生成多签trx
 
     ```cleos set contract whaleextrust contract_dir -d -x 86400 -s -j -p whaleextrust@owner > wal_exchange.json ```
       
@@ -32,7 +33,7 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
      
     ```cat wal_exchange.json | jq -r '.actions[0].data' | cut -c 27- | xxd -r -p |openssl dgst -sha256```
 
-2. 生成permission.json
+  1.2. 生成permission.json
 
     ```
     [
@@ -48,24 +49,22 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
     ]
     ```
 
-3. 提交议案
+  1.3. 提交议案, 提交代码审计
 
     ```cleos multisig propose_trx whaleex permission.json wal_exchange.json -p walexecutors```
 
-4. 由合约审计方提供该版本的code hash
+2. 合约审计: 由合约审计方提供该版本的code hash
 
-5. 多签方审查议案
+3. 节点: 多签方审查议案, 通过以下命令确保合约审计方提供的hash值, 与review得到的hash值一致后, 执行approve
 
     ```cleos multisig review walexecutors whaleex | jq '.transaction.actions[0].data.code'|xxd -r -p |openssl dgst -sha256```
     
-    查看得到的code hash 是否和合约审计方提供的code hash一致
-
-6. 多签方批准议案
+4. 节点: 多签方批准议案
 
     ```cleos multisig approve walexecutors whaleex '{"actor": "whaleex.com", "permission": "active"}' -p whaleex.com```
     
     ```cleos multisig approve walexecutors whaleex '{"actor": "eoscannonchn", "permission": "active"}' -p eoscannonchn```
 
-7. 执行议案
+5. WhaleEx: 执行议案
 
     ```cleos multisig exec walexecutors whaleex -p walexecutors```
