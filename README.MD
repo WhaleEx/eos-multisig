@@ -1,11 +1,21 @@
-# WhaleEx鲸交所智能合约多签解决方案
+# WhaleEx鲸交所智能合约多签解决方案[whaleex.com](https://www.whaleex.com)
 本文用于阐述"WhaleEx鲸交所智能合约多签解决方案"的目的和执行步骤
 ## 目的
-WhaleEx从设计之初的目标就是做一个没有作恶能力的去中心化交易所, 一直以来, 所有WhaleEx智能合约(whaleextrust)上的资产转出, 都是由该合约的active key(whaleextrust@eosio.code)来执行的. 鉴于我们的初衷, 也为了更好地保护用户的资产, 我们决定升级合约安全级别, 让WhaleEx和EOS主网节点多签来确保用户的资产安全. 
+WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一直以来, 所有WhaleEx智能合约([whaleextrust](https://eospark.com/contract/whaleextrust))上的资产转出, 都是由该合约的active key(whaleextrust@eosio.code)来执行的. 鉴于我们的初衷, 也为了更好地保护用户的资产, 我们决定升级合约安全级别, 让WhaleEx和EOS主网节点多签来确保用户的资产安全. 
 ## 优势
-该方案执行后, WhaleEx智能合约(whaleextrust)的
+该方案执行后, WhaleEx智能合约([whaleextrust](https://eospark.com/contract/whaleextrust))的
   ### 1. owner key: 
-  由EOS帐户whaleex.com和8家EOS主网节点(eosasia11111, eosbeijingbp, eosbixinboot, eoscannonchn, eosiomeetone, eoslaomaocom, eosstorebest, jedaaaaaaaaa)共同多签, 门限42, 其中whaleex.com(40), 其他节点(2), 每次执行必须要有1家以上的EOS主网节点认可, 才能执行. 
+  由EOS帐户[whaleex.com](https://www.whaleex.com)和8家EOS主网节点共同多签, 门限42, 其中[whaleex.com](https://www.whaleex.com)(40), 其他节点(2), 每次执行必须要有1家以上的EOS主网节点认可, 才能执行. 
+  
+  节点列表(字母排序): 
+   * [eosasia11111](https://eospark.com/bp/eosasia11111)
+   * [eosbeijingbp](https://eospark.com/bp/eosbeijingbp)
+   * [eosbixinboot](https://eospark.com/bp/eosbixinboot)
+   * [eoscannonchn](https://eospark.com/bp/eoscannonchn)
+   * [eosiomeetone](https://eospark.com/bp/eosiomeetone)
+   * [eoslaomaocom](https://eospark.com/bp/eoslaomaocom)
+   * [eosstorebest](https://eospark.com/bp/eosstorebest)
+   * [jedaaaaaaaaa](https://eospark.com/bp/jedaaaaaaaaa)
   ### 2. active key: 
   只有合约代码, 即whaleextrust@eosio.code有执行权限. 没有人可以控制active key. 
   ### 3. 多签执行的前提: 
