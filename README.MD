@@ -35,7 +35,7 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
 
   1.2. 生成permission.json
 
-    ```
+    
     [
        {"actor": "eosiomeetone", "permission": "active"},
        {"actor": "eosstorebest", "permission": "active"},
@@ -47,11 +47,11 @@ WhaleEx的初衷就是做一个没有作恶能力的去中心化交易所, 一�
        {"actor": "eoslaomaocom", "permission": "active"},
        {"actor": "whaleex.com", "permission": "active"}
     ]
-    ```
+    
 
   1.3. 提交议案, 提交代码审计
 
-    ```cleos multisig propose_trx whaleex permission.json wal_exchange.json -p walexecutors```
+    cleos multisig propose_trx whaleex permission.json wal_exchange.json -p walexecutors
 
 2. 合约审计: 由合约审计方提供该版本的code hash
 
